@@ -2,6 +2,9 @@
 ===========
 [![Build status][build-badge]][build-url]
 
+[build-badge]: https://img.shields.io/travis/luchobenitez/radiosoo.svg?style=flat
+[build-url]: https://travis-ci.org/luchobenitez/radiosoo
+
 ### What is it?
 
 The Radio So'o Server is a 100% open source forum platform built over node.js.
