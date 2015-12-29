@@ -1,0 +1,30 @@
+{
+  "name": "radiosoo",
+  "version": "0.0.1",
+  "author": "Lucho Benitez",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "lib",
+    "test",
+    "tests",
+    "pages",
+    "index.html",
+    "/js"
+  ],
+  "main": [
+    "src/public/css/radiosoo.css",
+    "src/public/js/radiosoo.js"
+  ],
+  "dependencies": {
+    "bootstrap": "latest",
+    "bootstrap-social": "latest",
+    "font-awesome": "latest"
+  },
+  "resolutions": {
+    "bootstrap-social": "~4.9.1",
+    "font-awesome": "~4.3.0",
+    "moment": "~2.10.3"
+  }
+}

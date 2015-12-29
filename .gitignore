@@ -52,12 +52,15 @@ node_modules
 ###################
 .bower-cache/
 .bower-registry/
-public/lib/
-
+src/public/lib/
+src/public/lib
 # Compiled assets
 ###################
-public/css/styles.css
-builtAssets/
+src/public/css/radiosoo.css
+src/public/css/**/*.css
+src/public/css/*.css
+src/public/media
+src/public/builtAssets/
 
 # Configuration
 ##################
@@ -66,7 +69,7 @@ env.json
 
 # Logging
 ##################
-skeleton.log
+radiosoo.log
 
 # Coverage directory used by tools like istanbul
 coverage
@@ -80,8 +83,3 @@ Berksfile.lock
 git-info.txt
 
 .vagrant
-
-src/public/lib
-src/public/css/**/*.css
-src/public/css/*.css
-src/public/media

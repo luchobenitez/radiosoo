@@ -1,13 +1,37 @@
 {
-  "name": "radiosoo",
-  "description": "Web forum on node_js",
-  "author": "lucho benitez",
-  "version": "0.0.0",
   "private": true,
+  "name": "radiosoo",
+  "author": "Lucho Benitez",
+  "description": "Web Forum build on node_js",
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luchobenitez/radiosoo.git"
+  },
+  "bugs": "https://github.com/luchobenitez/radiosoo/issues",
+  "contributors": "https://github.com/luchobenitez/radiosoo/graphs/contributors",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.github.com/luchobenitez/radiosoo/master/LICENSE"
+    }
+  ],
+  "keywords": [
+    "web",
+    "forum",
+    "forum",
+    "express",
+    "bower"
+  ],
   "scripts": {
     "start": "node ./bin/www",
     "radiosoo": "node ./bin/www",
     "rs": "node ./bin/www"
+  },
+  "engines": {
+    "node": "4.x.x",
+    "npm": "2.14.4"
   },
   "dependencies": {
     "body-parser": "~1.14.2",
@@ -18,5 +42,8 @@
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0",
     "stylus": "0.53.0"
+  },
+  "devDependencies": {
+    "bower": "^1.7.1"
   }
 }
