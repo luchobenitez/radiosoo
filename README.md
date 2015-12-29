@@ -1,9 +1,26 @@
 # Radio So'o
 ===========
 [![Build status][build-badge]][build-url]
+[![Dependency status][dependency-badge]][dependency-url]
+
 
 [build-badge]: https://img.shields.io/travis/luchobenitez/radiosoo.svg?style=flat
 [build-url]: https://travis-ci.org/luchobenitez/radiosoo
+
+[dependency-badge]: https://img.shields.io/david/luchobenitez/radiosoo.svg?style=flat
+[dependency-url]: https://david-dm.org/luchobenitez/radiosoo
+
+[dev-dep-badge]: https://img.shields.io/david/dev/luchobenitez/radiosoo.svg?style=flat
+[dev-dep-url]: https://david-dm.org/luchobenitez/radiosoo#info=devDependencies
+
+[license-badge]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat
+[license-url]: #license
+
+[release-badge]: https://img.shields.io/github/release/luchobenitez/radiosoo.svg?style=flat
+[release-url]: https://github.com/luchobenitez/radiosoo/releases
+
+[issues-badge]: https://img.shields.io/github/issues/luchobenitez/radiosoo.svg?style=flat
+[issues-url]: https://github.com/luchobenitez/radiosoo/issues
 
 ### What is it?
 
