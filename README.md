@@ -1,5 +1,6 @@
 # Radio So'o
 ===========
+[![Build status][build-badge]][build-url]
 
 ### What is it?
 
