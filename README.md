@@ -17,7 +17,7 @@
 [dev-dep-url]: https://david-dm.org/luchobenitez/radiosoo#info=devDependencies
 
 [license-badge]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat
-[license-url]: #license
+[license-url]: https://github.com/luchobenitez/radiosoo/LICENSE.md
 
 [release-badge]: https://img.shields.io/github/release/luchobenitez/radiosoo.svg?style=flat
 [release-url]: https://github.com/luchobenitez/radiosoo/releases
