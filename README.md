@@ -2,7 +2,10 @@
 ===========
 [![Build status][build-badge]][build-url]
 [![Dependency status][dependency-badge]][dependency-url]
-
+[![DevDependency status][dev-dep-badge]][dev-dep-url]
+[![Licensing][license-badge]][license-url]
+[![Release][release-badge]][release-url]
+[![Issue tracking][issues-badge]][issues-url]
 
 [build-badge]: https://img.shields.io/travis/luchobenitez/radiosoo.svg?style=flat
 [build-url]: https://travis-ci.org/luchobenitez/radiosoo
