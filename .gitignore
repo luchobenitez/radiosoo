@@ -53,14 +53,11 @@ node_modules
 .bower-cache/
 .bower-registry/
 src/public/lib/
-src/public/lib
 # Compiled assets
 ###################
-src/public/css/radiosoo.css
-src/public/css/**/*.css
-src/public/css/*.css
-src/public/media
-src/public/builtAssets/
+src/public/css
+src/public/stylus/*.css
+quality/*
 
 # Configuration
 ##################

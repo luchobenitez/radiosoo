@@ -3,6 +3,7 @@
 module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-stylus');
+  grunt.loadNpmTasks('grunt-contrib-csslint');
   grunt.loadNpmTasks('grunt-csscomb');
   grunt.loadNpmTasks('grunt-jscs');
   grunt.loadNpmTasks('grunt-githooks');
@@ -104,11 +105,35 @@ module.exports = function(grunt) {
               'src/stylus/radiosoo.css': ['src/public/css/radiosoo.css'],
           }
       }
+    },
+
+    csslint: {
+       options: {
+           force: true,
+           absoluteFilePathsForFormatters: true,
+           formatters: [
+               {id: 'compact', dest: 'quality/report/css/compact.xml'}
+           ]
+       },
+       strict:{
+           options:{
+               force: true,
+               import:2,
+               "box-model":false,
+           },
+           src:['src/public/css/*.css'],
+       },
+       lax: {
+            options: {
+                import: false
+            },
+       src: ['src/public/css/radiosoo.css']
+      }
     }
   });
 
   grunt.registerTask('default', ['analyze']);
-  grunt.registerTask('css', ['stylus', 'csscomb']);
+  grunt.registerTask('css', ['stylus', 'csscomb', 'csslint']);
   grunt.registerTask('test', 'Runs unit tests', ['mochaTest', 'karma:client']);
   grunt.registerTask('analyze', 'Validate code style', ['jshint', 'jscs']);
 };

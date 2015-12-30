@@ -59,7 +59,7 @@ Technology
 | On The Server     | On The Client  | Development | Testing   |
 | -------------     | -------------- | ----------- | -------   |
 | Node/NPM/NVM      | Bootstrap      | Bower       | Mocha     |
-| Express           | Font-Awesome   | Gulp        | Chai      |
+| Express           | Font-Awesome   | Grunt       | Chai      |
 | EJS               | jQuery         | JSHint      | Supertest |
 | Sequelize         | Moment.js      | JSCS        |           |
 | Passport          | animate.css    | Nodemon     |           |
