@@ -2,52 +2,12 @@
 =======
 
 ```
-git clone git@gitlab.com:luchobenitez/rs.git
-cd rs
+git clone https://gitlab.com/luchobenitez/radiosoo.git
+cd radiosoo
 npm install
 npm install bower -g
 bower install
 sh env
-```
-
-* Configuration
-
-```
-vim src/config/config.yml
-```
-
-### Configuration
-
-```
-vim src/config/config.yml
-```
-
-* Dependencies
-
-```
-    "dependencies": {
-      "body-parser": "latest",
-      "chai": "latest",
-      "cookie-parser": "latest",
-      "crypto": "latest",
-      "debug": "latest",
-      "express": "latest",
-      "express-handlebars": "latest",
-      "express-session": "latest",
-      "html-minifier": "latest",
-      "js-yaml": "latest",
-      "lodash": "latest",
-      "mongoose": "latest",
-      "mocha": "latest",
-      "morgan": "latest",
-      "passport": "latest",
-      "passport-local": "latest",
-      "passport-local-mongoose": "latest",
-      "serve-favicon": "latest",
-      "should": "latest",
-      "stylus": "latest",
-      "nib": "latest"
-    }
 ```
 
 * Database configuration
@@ -88,11 +48,13 @@ export DATABASE_URL = mariadb://radiosoo:radiosoopass@localhost:3306/radiosoo
 npm start
 ```
 
-* How to run tests
+* Grunt commands
 
-This didn't work yet
 ```
-make test
+grunt analyze
+grunt githooks
+grunt test
+grunt css
 ```
 
 * Deployment instructions
