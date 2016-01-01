@@ -53,6 +53,7 @@ node_modules
 .bower-cache/
 .bower-registry/
 src/public/lib/
+src/stylus/bootstrap-stylus/
 # Compiled assets
 ###################
 src/public/css

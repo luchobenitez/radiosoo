@@ -36,7 +36,9 @@ module.exports = function(grunt) {
         'GruntFile.js',
         'src/**/*.js',
         '!src/public/lib/**',
-        '!src/public/js/**'
+        '!src/public/js/**',
+        '!src/stylus/**',
+        '!src/public/css/**'
       ]
     },
     githooks: {

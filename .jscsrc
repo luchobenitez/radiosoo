@@ -1,5 +1,5 @@
 {
-  "excludeFiles": ["node_modules/*", "src/public/*"],
+  "excludeFiles": ["node_modules/*", "src/public/*", "src/stylus/bootstrap-stylus"],
   "disallowEmptyBlocks": true,
   "disallowKeywords": ["with"],
   "disallowMixedSpacesAndTabs": true,
