@@ -1,5 +1,201 @@
+@import '_variables'
+
 body
-  padding: 50px
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+  font 15px/1.8 Helvetica, arial, sans-serif
+  background-color $rsBgColor
+  color $rsFgColor
+
+h1
+  margin 10 0 30 0
+  font-size  22px
+  color  $rsHColor
+
+h2
+  margin  10 0 20 0
+  font-size  20
+  color  $rsHColor
+
+h3
+  margin  10 0 10 0
+  font-size  18px
+  color  $rsHColor
+
+h4
+  margin  5px 0 5px 0
+  font-size  16px
+  color  $rsHColor
+
+h5
+  margin  5px 0 5px 0
+  font-size  14px
+  color  $rsHColor
+
+h6
+  margin  5px 0 5px 0
+  font-size  12px
+  color  $rsHColor
+
 a
-  color: #00B7FF
+  color  $rsFgColor
+
+ahover
+	color  $rsFgColor
+	font-weight  bold
+
+.container
+  background-color  $rsBgColor
+  color  $rsFgColor
+  padding 45px 10 25px 10
+
+.bg-1
+	background  $rsBgColor
+	color  $rsFgColor
+
+.bg-1
+	color  $rsFgColor
+
+.bg-1 p
+	font-style  italic
+
+.navbar-header  .navbar-header
+  float none
+
+.navbar-left,.navbar-right
+  float none
+
+.navbar-toggle
+  display block
+
+.navbar-collapse
+  border-top 1px solid transparent
+  box-shadow inset 0 1px 0 rgba(255,255,255,0.1)
+
+.navbar-fixed-top
+	top 0
+	border-width 0 0 1px
+
+.navbar-collapse.collapse
+  display none
+
+.navbar-nav
+  float none
+
+.navbar-nav>li
+  float none
+
+.navbar-nav>li>a
+  padding 10 10 10 10
+
+.collapse.in
+	display block
+
+.navbar-collapse.in
+  overflow-y auto
+
+.navbar-nav .open .dropdown-menu
+  position static
+  float none
+  width auto
+  margin 0 0 0 0
+  background-color transparent
+  border 0
+  box-shadow none
+
+.navbar-nav .open .dropdown-menu>li>a,
+.navbar-nav .open .dropdown-menu .dropdown-header
+  padding 5px 15px 5px 25px
+
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a
+  color $rsNvAColor
+
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>ahover,
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>afocus
+  color $rsFgColor
+  background-color transparent
+  background-image none
+
+.footer
+  background-color $rsBgColor
+  color $rsFgColor
+
+.footer a
+  background-color $rsBgColor
+  color $rsFgColor
+
+.footer ahover
+  background-color $rsBgColor
+  color $rsFgColor
+	text-decoration  none
+
+.rs-ls-topic
+  background-color $rsTopicLsBgColor
+  color $rsFgColor
+  margin 0 0 0 0
+  padding 0 20 0 20
+
+.rs-topic-bd
+  color  $rsFgColor
+  font-size  14px
+  font-weight  bold
+  padding 60 20 0 20
+
+.rs-topic-ls-st
+  width 100%
+  background-color  $rsTopicLsBgColor
+  display  table
+  font-size  12px
+  color  $rsFgColor
+  padding 1px 4px 1px 4px
+
+.rs-topic-sb
+  width  50
+  height  75px
+  font-size  14px
+  color  $rsFgColor
+  float  left
+  padding 1px 4px 1px 4px
+
+.rs-topic-ss
+  width  130
+  height  75px
+  font-size  14px
+  color  $rsFgColor
+  float  left
+  padding 1px 4px 1px 4px
+
+.rs-topic-st
+  width  55px
+  font-size  14px
+  color  $rsFgColor
+  float  left
+  padding 1px 4px 1px 4px
+
+.rs-hr
+  margin 0 0 0 0
+  padding 0 5px 0 5px
+
+.textinput
+  color black
+
+.flash
+  position absolute
+  top 0
+  bottom 0
+  z-index 1001
+  width 100%
+  opacity 0.75
+  background-color $rsHColor
+
+.flash span
+  float left
+  margin-right .7em
+
+.flash .ui-corner-all
+  width 300
+  margin 50 auto 0 auto
+  padding 0 5px
+  opacity 0.9
+  font-weight bold
+  -moz-box-shadow 0 0 8px $rsHColor
+  -webkit-box-shadow 0 0 8px $rsHColor
+  box-shadow 0 0 8px $rsHColor

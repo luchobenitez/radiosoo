@@ -1,0 +1,15 @@
+<p>Editar información de la cuenta:</p>
+
+<form id="userUpdateForm" method="post" action="/user/<%= user.id %>" >
+  <input type="hidden" name="_method" value="put">
+  <!--input type="submit" value="Enviar"-->
+  <a href="/user/<%= user.id %>/edit" class="btn btn-success btn-block">Editar</a>
+  <% include _form.ejs %>
+</form>
+
+<form id="userDeleteForm" method="post" action="/user/<%= user.id %>">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit" name="borrar" value="Form" class="btn btn-success btn-block" onClick="return confirm('Borrar cuenta: <%= user.username %>');">
+    Borrar Usuario
+  </button>
+</form>

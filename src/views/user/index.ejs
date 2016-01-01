@@ -1,0 +1,75 @@
+<div class="container" style="margin-top: 35px">
+  <h3>Users</h3>
+  <table class="table forum table-striped">
+    <thead>
+      <tr>
+        <th class="cell-stat text-center hidden-xs hidden-sm">id</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">nick</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">username</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">name</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">genre</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">email</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">dateOfBirth</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">dateOfDeath</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">password</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">isAdmin</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">salt</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">authToken</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">registeredAt</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">modifiedAt</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">lastLogin</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">lastSeen</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">lastPost</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">lastEmail</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">banAt</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">banTill</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">banCount</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">trustLevel</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">avatarId</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">msgCount</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">logCount</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">ipAddr</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">status</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">iconId</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">preferenceId</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% var i; for (i=0; i < users.length; i++) { %>
+        <tr>
+          <td><a href="/user/<%= users[i].id %>/edit"><%= users[i].id %></a></td>
+          <td><a href="/user/<%= users[i].id %>/edit"><%= users[i].nick %></a></td>
+          <td class="text-center hidden-xs hidden-sm"><%= users[i].username %></td>
+          <td class="text-center hidden-xs hidden-sm"><%= users[i].name %></td>
+          <td class="text-center hidden-xs hidden-sm"><%= users[i].genre %></td>
+          <td class="text-center hidden-xs hidden-sm"><%= users[i].email %></td>
+          <td class="text-center hidden-xs hidden-sm"><%= users[i].dateOfBirtd %></td>
+          <td class="text-center hidden-xs hidden-sm"><%= users[i].dateOfDeatd %></td>
+          <td class="text-center hidden-xs hidden-sm"><%= users[i].password %></td>
+          <td class="text-center hidden-xs hidden-sm"><%= users[i].isAdmin %></td>
+          <td class="text-center hidden-xs hidden-sm"><%= users[i].salt %></td>
+          <td class="text-center hidden-xs hidden-sm"><%= users[i].autdToken %></td>
+          <td class="text-center hidden-xs hidden-sm"><%= users[i].registeredAt %></td>
+          <td class="text-center hidden-xs hidden-sm"><%= users[i].modifiedAt %></td>
+          <td class="text-center hidden-xs hidden-sm"><%= users[i].lastLogin %></td>
+          <td class="text-center hidden-xs hidden-sm"><%= users[i].lastSeen %></td>
+          <td class="text-center hidden-xs hidden-sm"><%= users[i].lastPost %></td>
+          <td class="text-center hidden-xs hidden-sm"><%= users[i].lastEmail %></td>
+          <td class="text-center hidden-xs hidden-sm"><%= users[i].banAt %></td>
+          <td class="text-center hidden-xs hidden-sm"><%= users[i].banTill %></td>
+          <td class="text-center hidden-xs hidden-sm"><%= users[i].banCount %></td>
+          <td class="text-center hidden-xs hidden-sm"><%= users[i].trustLevel %></td>
+          <td class="text-center hidden-xs hidden-sm"><%= users[i].avatarId %></td>
+          <td class="text-center hidden-xs hidden-sm"><%= users[i].msgCount %></td>
+          <td class="text-center hidden-xs hidden-sm"><%= users[i].logCount %></td>
+          <td class="text-center hidden-xs hidden-sm"><%= users[i].ipAddr %></td>
+          <td class="text-center hidden-xs hidden-sm"><%= users[i].status %></td>
+          <td class="text-center hidden-xs hidden-sm"><%= users[i].iconId %></td>
+          <td class="text-center hidden-xs hidden-sm"><%= users[i].preferenceId %></td>
+          <td class="text-center hidden-xs hidden-sm"><%= users[i].location %></td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>

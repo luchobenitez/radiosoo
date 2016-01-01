@@ -1,0 +1,15 @@
+<% if(!topic.registeredAt) { %>
+  <input type="hidden" id="registeredAt" name="topic[registeredAt]" value="<%= new Date(); %>">
+<% } %>
+<input type="hidden" id="ForumId" name="topic[ForumId]" value="<%= 1 %>">
+<input type="hidden" id="UserId" name="topic[UserId]" value="<%= 1 %>">
+<div class="form-group">
+    <label for="titulo" class="control-label">Titulo</label>
+    <input type="text" class="form-control" id="titulo" name="topic[titulo]" value="<%=topic.titulo%>" required="true" title="Ingrese el titulo" placeholder="<titulo>">
+    <span class="help-block"></span>
+</div>
+<div class="form-group">
+    <label for="texto" class="control-label">Texto</label>
+    <input type="text" class="form-control" id="texto" name="topic[texto]" value="<%=topic.texto%>" required="true" title="Ingrese el texto">
+    <span class="help-block"></span>
+</div>

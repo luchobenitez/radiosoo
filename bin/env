@@ -1,0 +1,13 @@
+#!/bin/bash
+export PASSWORD_ENCRYPTION_KEY=4d8c3dad-fa8c-4008-a8e5-db614daf09d7
+if [ "$1" = "m" ];
+  then
+  export DATABASE_URL=mariadb://rs:rstest@localhost:3306/rstest
+elif [ "$1" = "s" ];
+  then
+  export DATABASE_URL=sqlite://:@:/
+elif [ "$1" = "h" ];
+  then
+  echo "should run:"
+  echo "source ./env"
+fi

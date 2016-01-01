@@ -1,0 +1,39 @@
+{
+  "site": {
+    "language": "en",
+    "title": "goBconsole",
+    "siteName": "goBconsole.com.py",
+    "meta": {
+      "abstract": "Monitor your Internet services",
+      "description": "Monitoring your services",
+      "keywords": "Monitor, DNS, NAMED, HTTP, WWW, SMTP"
+    }
+  },
+  "welcome": "Welcome to",
+  "visited": "You have visited this site",
+  "time": "time",
+  "times": "times",
+  "dashboard": {
+    "title": "Dashboard",
+    "domains": "Monitoring domains",
+    "services": "Monitoring services",
+    "status": "Statistics",
+    "alerts": "Events",
+    "viewDetails": "View details"
+  },
+  "topBarMenu": {
+    "user": {
+      "profile": "User Profile",
+      "settings": "Settings",
+      "logout": "Logout"
+    }
+  },
+  "sideBarMenu": {
+    "search": "Search... ",
+    "dashboard": "Dashboard",
+    "charts": "Charts",
+    "flotCharts": "Flot Charts",
+    "flotCharts2": "Flot Charts2",
+    "tables": "Tables"
+  }
+}

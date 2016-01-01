@@ -1,0 +1,29 @@
+<% if (typeof message !== 'undefined' && message.length > 0) { %>
+    <div class="alert alert-success fade in">
+        <span><%- message %></span>
+        <button class="close" data-dismiss="alert">x</button>
+        <p> message</p>
+    </div>
+<% } %>
+<% if (typeof success !== 'undefined' && success.length > 0) { %>
+    <div class="alert alert-success fade in">
+        <span><%- success %></span>
+        <button class="close" data-dismiss="alert">x</button>
+        <p> success</p>
+    </div>
+<% } %>
+<% if (typeof failure !== 'undefined' && failure.length > 0) { %>
+    <div class="alert alert-success fade in">
+        <span><%- failure %></span>
+        <button class="close" data-dismiss="alert">x</button>
+        <p>failure</p>
+    </div>
+<% } %>
+
+<% if (typeof errores !== 'undefined' && errores.length > 0) { %>
+    <div class="alert alert-danger fade in">
+        <span><%- errores %></span>
+        <button class="close" data-dismiss="alert">x</button>
+        <p>errores</p>
+    </div>
+<% } %>

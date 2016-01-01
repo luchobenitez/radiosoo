@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="resume">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+        <div class="panel panel-default">
+          <div class="panel-heading resume-heading">
+            <div class="row">
+              <form id="commentsCreateForm" method="post" action="/topics/:topicId(\\d+)/comments" >
+                <% include _form.ejs %>
+                <button type="submit" name="commit" value="Form" class="btn btn-success btn-block">Crear Foro</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

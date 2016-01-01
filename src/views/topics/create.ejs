@@ -1,0 +1,27 @@
+Crear usuario: <p>
+
+<form id="topicForm" method="post" action="/topics" >
+  <% include _form.ejs %>
+  <button type="submit" name="commit" value="Form" class="btn btn-success btn-block">
+    Crear Topic
+  </button>
+</form>
+
+<div class="container">
+  <div class="resume">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+        <div class="panel panel-default">
+          <div class="panel-heading resume-heading">
+            <div class="row">
+              <form id="topicCreateForm" method="post" action="/topics" enctype="multipart/form-data">
+                <% include _form.ejs %>
+                <button type="submit" name="commit" value="Form" class="btn btn-success btn-block">Crear Topic</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

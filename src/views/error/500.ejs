@@ -1,0 +1,12 @@
+<h1><%= message %></h1>
+<h2><%= error.status %></h2>
+<pre><%= error.stack %></pre>
+
+<section class="main" id="s1">
+<% if (errors.length > 0) { %>
+    Corregir errores:<br/>
+    <% for (var i in errors) { %>
+       <span> <%= errors[i].message %> </span><br/>
+    <% } %>
+<% } %>
+</section>

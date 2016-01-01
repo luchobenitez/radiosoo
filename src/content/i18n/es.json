@@ -1,0 +1,40 @@
+{
+  "site": {
+    "language": "es",
+    "title": "goBconsole",
+    "siteName": "goBconsole.com.py",
+    "meta": {
+      "abstract": "Monitorea tus servicios en Internet",
+      "description": "Monitoreo de servicios en Internet",
+      "keywords": "Monitor, DNS, NAMED, HTTP, WWW, SMTP"
+    }
+  },
+  "welcome": "Bienvenido a",
+  "visited": "Usted ha visitado este sitio",
+  "time": "vez",
+  "times": "veces",
+  "dashboard": {
+    "title": "Panel de Control",
+    "domains": "Dominios",
+    "services": "Servicios",
+    "status": "Estadisticas",
+    "alerts": "Eventos",
+    "viewDetails": "Ver detalles"
+  },
+    "topBarMenu": {
+    "user": {
+      "profile": "Perfil",
+      "settings": "Configuracion",
+      "logout": "Salir"
+    }
+  },
+  "sideBarMenu": {
+    "search": "Buscar... ",
+    "dashboard": "Panel de Control",
+    "charts": "Graficos",
+    "flotCharts": "Flot Charts1",
+    "flotCharts2": "Flot Charts2",
+    "tables": "Tablas"
+  }
+
+}

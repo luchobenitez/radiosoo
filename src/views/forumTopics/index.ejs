@@ -1,0 +1,16 @@
+<div class="container">
+	<div class="row">
+    <div class="col-md-12">
+      <h4>Foros/topics</h4>
+			<article class="article">
+				<hr class="article-hr">
+				<% for (var i in forum.Topics) { %>
+						<a href="/forum/<%= forum.Topics[i].id %>/edit" ><%= forum.Topics[i].id %></a>
+						<h5><a href="/forum/<%= forum.id %>/topics/<%= forum.Topics[i].id %>/comments/details" data-id="titulo"><%= forum.Topics[i].titulo %></a></h5>
+						<p class="hidden-xs hidden-sm"><%= forum.Topics[i].texto %></p>
+						<% include ../partials/articleStatus %>
+				<% } %>
+			</article>
+    </div>
+  </div>
+</div>

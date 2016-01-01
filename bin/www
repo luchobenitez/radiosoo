@@ -1,5 +1,17 @@
 #!/usr/bin/env node
 
+/*
+ * Start Express server.
+ *
+ *   NOTE: To alter the environment we can set the
+ *   NODE_ENV environment variable, for example:
+ *
+ *     $ NODE_ENV=production node app.js
+ *
+ *   This is important - many caching mechanisms
+ *   are *only* enabled when in production!
+*/
+
 /**
  * Module dependencies.
  */
@@ -7,6 +19,9 @@
 var app = require('../src/app');
 var debug = require('debug')('radiosoo:server');
 var http = require('http');
+var semver = require('semver');                  // https://npmjs.org/package/semver
+var config = require('../src/config/config');         // Get configuration file
+var io     = require('socket.io')(server);
 
 /**
  * Get port from environment and store in Express.
@@ -25,7 +40,63 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+// "server.listen" for socket.io
+server.listen(app.get('port'), function () {
+
+ // Test for correct node version as spec'ed in package.info
+ if (!semver.satisfies(process.versions.node, config.engine)) {
+   debug('Error: unsupported version of Node or io.js!'.red);
+   debug(config.name.red + ' needs Node or io.js version '.red + config.engine.red);
+   process.exit(0);
+ }
+
+ // Log how we are running
+ debug('listening on port ' + app.get('port').toString().green);
+ debug('listening in ' + app.settings.env.green + ' mode.');
+ debug('Ctrl+C'.green + ' to shut down. ;)');
+
+ // Exit cleanly on Ctrl+C
+ process.on('SIGINT', function () {
+   io.close();  // close socket.io
+   console.log('\n');
+   debug('has ' + 'shutdown'.green);
+   debug('was running for ' + Math.round(process.uptime()).toString().green + ' seconds.');
+   process.exit(0);
+ });
+});
+
+/**
+ * Emit Pageviews on Socket.io for Dashboard
+ *
+ *   Web Page (Client) --->> ( `pageview` messages ) --->> Server
+ *   Web Page (Client) <<--- (`dashUpdate` messages) <<--- Server
+ */
+
+var connectedCount = 0;
+
+io.on('connection', function (socket) {
+  connectedCount += 1;
+  // Listen for pageview messages from clients
+  socket.on('pageview', function (message) {
+    var ip = socket.handshake.headers['x-forwarded-for'] || socket.client.conn.remoteAddress || socket.handshake.address;
+    var url = message;
+    // Broadcast dashboard update (to all clients in default namespace)
+    io.emit('dashUpdate', {
+      connections: connectedCount,
+      ip: ip,
+      url: url,
+      timestamp: new Date()
+    });
+  });
+  // Update dashboard connections on disconnect events
+  socket.on('disconnect', function () {
+    connectedCount -= 1;
+    io.emit('dashUpdate', {
+      connections: connectedCount
+    });
+  });
+});
+
 server.on('error', onError);
 server.on('listening', onListening);
 

@@ -4,6 +4,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-stylus');
   grunt.loadNpmTasks('grunt-contrib-csslint');
+  grunt.loadNpmTasks('grunt-bower-task');
   grunt.loadNpmTasks('grunt-csscomb');
   grunt.loadNpmTasks('grunt-jscs');
   grunt.loadNpmTasks('grunt-githooks');
@@ -73,6 +74,9 @@ module.exports = function(grunt) {
       },
       logClean: {
         command: 'rm -f logs/*.log'
+      },
+      cpcss: {
+        command: 'cp src/stylus/radiosoo.css src/public/css'
       }
     },
     mochaTest: {
@@ -92,10 +96,23 @@ module.exports = function(grunt) {
       compile: {
         options: {
           compress: false,
-          paths: ['source/stylus']
+          paths: ['src/stylus']
         },
         files: {
           'src/stylus/radiosoo.css': 'src/stylus/radiosoo.styl'
+        }
+      }
+    },
+    bower: {
+      install: {
+        options: {
+          targetDir: 'src/public/lib',
+          layout: 'byType',
+          install: true,
+          verbose: false,
+          cleanTargetDir: false,
+          cleanBowerDir: true,
+          bowerOptions: { forceLatest:true }
         }
       }
     },
@@ -133,7 +150,8 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('default', ['analyze']);
-  grunt.registerTask('css', ['stylus', 'csscomb', 'csslint']);
+  grunt.registerTask('bower', ['bower']);
+  grunt.registerTask('css', ['stylus', 'shell:cpcss', 'csscomb', 'csslint']);
   grunt.registerTask('test', 'Runs unit tests', ['mochaTest', 'karma:client']);
   grunt.registerTask('analyze', 'Validate code style', ['jshint', 'jscs']);
 };

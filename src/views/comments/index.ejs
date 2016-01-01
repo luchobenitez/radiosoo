@@ -1,0 +1,35 @@
+<div class="container">
+	<div class="row">
+    <div class="col-md-12">
+      <h4>Comentarios</h4>
+      <div class="table-responsive">
+        <table id="forumTable" class="table table-bordred table-striped">
+          <thead>
+            <tr>
+              <th><input type="checkbox" id="checkall" /></th>
+              <th class="cell-stat text-center hidden-sm">Id</th>
+              <th class="cell-stat text-center hidden-sm">Texto</th>
+              <th class="cell-stat text-center hidden-xs hidden-sm">Fecha de Registro</th>
+              <th class="cell-stat text-center hidden-xs hidden-sm">Fecha de modificación</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% var i; for (i=0; i < comments.length; i++) { %>
+              <tr>
+                <td><input type="checkbox" class="checkthis" /></td>
+                <td><a href="#forumEditModal" data-toggle="modal" id="<%= comments[i].id %>" data-target="#forumEditModal" data-id="id"><%= comments[i].id %></a></td>
+                <td><a href="/forum/<%= comments[i].id %>/edit" data-id="name"><%= comments[i].texto %></a></td>
+                <td class="text-center hidden-xs hidden-sm"><%= comments[i].registeredAt %></td>
+                <td class="text-center hidden-xs hidden-sm"><%= comments[i].modifiedAt %></td>
+                <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#forumEditModal" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+                <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#forumDeleteModal" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+              </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

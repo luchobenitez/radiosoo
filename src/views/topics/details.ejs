@@ -1,0 +1,47 @@
+<div class="container">
+	<div class="row">
+    <div class="col-md-12">
+      <h4>Foros</h4>
+      <div class="table-responsive">
+        <table id="topicTable" class="table table-bordred table-striped">
+          <thead>
+            <tr>
+              <th class="cell-stat text-center hidden-sm">Topic</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><h4><%= topic.titulo %></h4></td>
+            </tr>
+            <tr>
+							<td class="text hidden-xs hidden-sm">
+								<textarea name="TextTopic" style="width:100%; border:none; margin:none;">
+									<%= topic.texto %>
+								</textarea>
+							</td>
+            </tr>
+            <tr>
+              <td class="hidden-xs hidden-sm">by <a href="#"><%= topic.User.nick %></a><br><small>
+            </tr>
+        </tbody>
+      </table>
+      <table id="topicTable" class="table table-bordred table-striped">
+        <tbody>
+            <% var i; for (i=0; i < topic.Comments.length; i++) { %>
+              <tr>
+								<td>
+									<textarea name="TextComment" height="100%" style="width:100%; border:none; margin:none;">
+										<%= topic.Comments[i].texto %>
+									</textarea>
+								</td>
+							</tr>
+							<tr>
+                <td class="hidden-xs hidden-sm">by <a href="#"><%= topic.Comments[i].User.nick %></a><br><small>
+              </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
