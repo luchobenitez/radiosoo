@@ -24,7 +24,9 @@ module.exports = function(grunt) {
         'GruntFile.js',
         'src/**/*.js',
         '!src/public/lib/**',
-        '!src/public/js/**'
+        '!src/public/css/**',
+        '!src/public/js/**',
+        '!src/stylus/**'
       ]
     },
     jshint: {
