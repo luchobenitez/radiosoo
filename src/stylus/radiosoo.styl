@@ -401,3 +401,43 @@ a:active
 .article-hr
   margin 0 0 0 0
   padding 0 5px 0 5px
+
+//
+// Tablas
+// --------------------------------------------------
+
+.welltable
+  gradient-vertical(darken($well-bg, 5), $well-bg)
+  border-color darken($well-bg, 10)
+  box-shadow inset 0 1px 3px rgba(0, 0, 0, .05), 0 1px 0 rgba(255, 255, 255, .1)
+  background-color $body-bg
+  color $text-color
+
+.table-striped > tbody > tr:nth-of-type(2n+1)
+  background-color: $body-bg
+
+.forum.table > tbody > tr > td
+  vertical-align: middle
+  background-color $body-bg
+  color $text-color
+
+.forum .fa
+  width: 1em
+  text-align: center
+  background-color $body-bg
+  color $text-color
+
+.forum.table th.cell
+  width: 36em
+  background-color $body-bg
+  color $text-color
+
+.forum.table th.cell-stat
+  width: 6em
+  background-color $body-bg
+  color $text-color
+
+.forum.table th.cell-stat-2x
+  width: 14em
+  background-color $body-bg
+  color $text-color

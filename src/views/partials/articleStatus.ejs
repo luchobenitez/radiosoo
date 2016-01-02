@@ -1,71 +1,83 @@
-  <section class="article-ls-st">
-    <h6>Estado</h6>
-    <div class="article-sb">
-    <span class="fa-stack fa-lg">
-      <i class="fa fa-square-o fa-stack-2x"></i>
-      <i class="fa fa-twitter fa-stack-1x"></i>
-    </span>
-  </div>
-    <div class="article-sb">
-    <span class="fa-stack fa-lg">
-      <i class="fa fa-square-o fa-stack-2x"></i>
-      <i class="fa fa-facebook fa-stack-1x"></i>
-    </span>
-  </div>
-    <div class="article-sb">
-    <span class="fa-stack fa-lg">
-      <i class="fa fa-square-o fa-stack-2x"></i>
-      <i class="fa fa-google-plus fa-stack-1x"></i>
-    </span>
-  </div>
-    <div class="article-sb">
-    <span class="fa-stack fa-lg">
-      <i class="fa fa-square-o fa-stack-2x"></i>
-      <i class="fa fa-instagram fa-stack-1x"></i>
-    </span>
-  </div>
-    <div class="article-sb">
-    <span class="fa-stack fa-lg">
-      <i class="fa fa-square-o fa-stack-2x"></i>
-      <i class="fa fa-whatsapp fa-stack-1x"></i>
-    </span>
-  </div>
-    <div class="article-ss">
-      <center>
-    <p><small><%= forum.Topics[i].createdAt %></small></p>
-      <span class="glyphicon glyphicon-user">
-        <p>
-        <span>by <a href="#"><%= forum.Topics[i].User.nick %></a></span>
-        </p>
-      </span>
-      </center>
-    </div>
-    <div class="article-ss">
-      <center>
-    <p><small><%= forum.Topics[i].updatedAt %></small></p>
-      <span class="glyphicon glyphicon-share-alt">
-    <p>
-        <span>XXXX</span>
-      </p>
-      </span>
-      </center>
-    </div>
-    <div class="article-ss">
-      <center>
-    <p><small><%= forum.Topics[i].detailCount %></small></p>
-      <p><span>Replies</span></p>
-      </center>
-    </div>
-    <div class="article-ss">
-      <center>
-    <p><small><%= forum.Topics[i].detailCount %></small></p>
-      <p><span>Visitas</span></p>
-      </center>
-    </div>
-    <div class="article-ss">
-      <center>
-    <p><small><%= forum.Topics[i].detailCount %></small></p>
-      <p><span>She ha'a</span></p>
-      </center>
-    </div>
-  </section>
+<table class="table forum">
+  <tbody>
+    <tr>
+      <td class="cell-stat text-center hidden-xs hidden-sm">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-square-o fa-stack-2x"></i>
+          <i class="fa fa-twitter fa-stack-1x"></i>
+        </span>
+      </td>
+      <td class="cell-stat text-center hidden-xs hidden-sm">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-square-o fa-stack-2x"></i>
+          <i class="fa fa-facebook fa-stack-1x"></i>
+        </span>
+      </td>
+      <td class="cell-stat text-center hidden-xs hidden-sm">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-square-o fa-stack-2x"></i>
+          <i class="fa fa-google-plus fa-stack-1x"></i>
+        </span>
+      </td>
+      <td class="cell-stat text-center hidden-xs hidden-sm">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-square-o fa-stack-2x"></i>
+          <i class="fa fa-instagram fa-stack-1x"></i>
+        </span>
+      </td>
+      <td class="cell-stat text-center hidden-xs hidden-sm">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-square-o fa-stack-2x"></i>
+          <i class="fa fa-whatsapp fa-stack-1x"></i>
+        </span>
+      </td>
+      <td class="cell-stat text-center hidden-xs hidden-sm">
+        <center>
+          <small>
+            <p><%= forum.Topics[i].createdAt %></p>
+            <p>
+              <span class="glyphicon glyphicon-user">
+                <a href="#"><%= forum.Topics[i].User.nick %></a>
+              </span>
+            </p>
+          </small>
+        </center>
+      </td>
+      <td class="cell-stat text-center hidden-xs hidden-sm">
+        <center>
+          <small>
+          <p><%= forum.Topics[i].updatedAt %></p>
+          <p>
+          <span class="glyphicon glyphicon-share-alt">
+          <span>XXXX</span>
+          </small>
+          </p>
+        </center>
+      </td>
+      <td class="cell-stat text-center hidden-xs hidden-sm">
+        <center>
+          <small>
+          <p><%= forum.Topics[i].detailCount %></p>
+          <p><span>Replies</span></p>
+          </small>
+        </center>
+      </div>
+      <td class="cell-stat text-center hidden-xs hidden-sm">
+        <center>
+          <small>
+          <p><%= forum.Topics[i].detailCount %></p>
+          <p><span>Visitas</span></p>
+          </small>
+        </center>
+      </td>
+      <td class="cell-stat text-center hidden-xs hidden-sm">
+        <center>
+          <small>
+          <p><%= forum.Topics[i].detailCount %></p>
+          <p><span>She ha'a</span></p>
+          </small>
+        </center>
+      </td>
+    </tr>
+  <tbody>
+</table>

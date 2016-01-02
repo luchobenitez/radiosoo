@@ -1,16 +1,41 @@
-<div class="container">
-	<div class="row">
-    <div class="col-md-12">
-      <h4>Foros/topics</h4>
-			<article class="article">
-				<hr class="article-hr">
+<div class="container" style="margin-top: 35px">
+  <div class="page-header page-heading">
+		<table class="table forum table-striped">
+			<tbody>
+	      <tr>
+	        <td><img src="/img/gadsg.gif"></td>
+	        <td><img src="/img/gadsp.gif"></td>
+	      </tr>
+	    </tbody>
+	  </table>
+	</div>
+	<!--div class="welltable"-->
+	  <table class="table forum table-striped">
+	    <thead>
+	      <tr>
+	        <th class="cell-stat text-center hidden-xs hidden-sm">Tópicos</th>
+	      </tr>
+	    </thead>
+	    <tbody>
 				<% for (var i in forum.Topics) { %>
-						<a href="/forum/<%= forum.Topics[i].id %>/edit" ><%= forum.Topics[i].id %></a>
-						<h5><a href="/forum/<%= forum.id %>/topics/<%= forum.Topics[i].id %>/comments/details" data-id="titulo"><%= forum.Topics[i].titulo %></a></h5>
-						<p class="hidden-xs hidden-sm"><%= forum.Topics[i].texto %></p>
+					<tr>
+						<td class="text-center"><i class="fa fa-comments-o fa-2x text-primary"></i></td>
+						<td>
+							<h4>
+								<a href="/forum/<%= forum.id %>/topics/<%= forum.Topics[i].id %>/comments/details" data-id="titulo">
+									<%= forum.Topics[i].titulo %>
+									<small>
+										<p class="hidden-xs hidden-sm"><%= forum.Topics[i].texto %></p>
+									</small>
+								</a>
+							</h4>
+						</td>
+					</tr>
+					<tr>
 						<% include ../partials/articleStatus %>
+					</tr>
 				<% } %>
-			</article>
-    </div>
-  </div>
+	    </tbody>
+	  </table>
+	<!--/div-->
 </div>

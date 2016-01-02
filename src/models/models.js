@@ -227,6 +227,7 @@ exports.ModeratorLog = ModeratorLog;
 
 // sequelize.sync() inicializa tabla de preguntas en DB
 sequelize.sync().then(function () {
+  console.log ('sequelize SYNC');
   // then(..) ejecuta el manejador una vez creada la tabla
   User.count().then(function (count) {
     if (count === 0) {   // la tabla se inicializa solo si está vacía
