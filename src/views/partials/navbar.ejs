@@ -49,15 +49,15 @@
       </form>
 
       <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="/forum"><span class="fa fa-comments-o"> Foros</a></li>
-        <li><a href="/donar"><span class="glyphicon glyphicon-tint"> Donar</a></li>
+        <li class="active"><a href="/forum"><span class="glyphicon glyphicon-list"></span> Foros</a></li>
+        <li><a href="/donar"><span class="glyphicon glyphicon-tint"></span> Donar</a></li>
         <%if(!user){%>
-          <li><a href="/user/create"><span class="glyphicon glyphicon-user"> Registrarse</a></li>
-          <li><a href="/login"><span class="glyphicon glyphicon-log-in"> Login</a></li>
+          <li><a href="/user/create"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
+          <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         <%}else{%>
-          <li><a href="/user/<%=user.id%>"><span class="glyphicon glyphicon-user"> <%=user.username%></a></li>
-          <li><a href="/user/<%=user.id%>/topics"><span class="glyphicon glyphicon-file"> Mis Topicos</a></li>
-          <li><a href="/logout"><span class="glyphicon glyphicon-log-out"> Logout</a></li>
+          <li><a href="/user/<%=user.id%>"><span class="glyphicon glyphicon-user"></span> <%=user.username%></a></li>
+          <li><a href="/user/<%=user.id%>/topics"><span class="glyphicon glyphicon-file"></span> Mis Topicos</a></li>
+          <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
         <%}%>
       </ul>
     </div><!-- /.navbar-collapse -->

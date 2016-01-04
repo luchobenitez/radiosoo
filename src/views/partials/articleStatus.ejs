@@ -1,4 +1,4 @@
-<table class="table forum">
+<table class="table forum table-striped">
   <tbody>
     <tr>
       <td class="cell-stat text-center hidden-xs hidden-sm">
@@ -34,24 +34,13 @@
       <td class="cell-stat text-center hidden-xs hidden-sm">
         <center>
           <small>
-            <p><%= forum.Topics[i].createdAt %></p>
+            <p><%= moment(forum.Topics[i].createdAt).format(DateFormat) %></p>
             <p>
               <span class="glyphicon glyphicon-user">
                 <a href="#"><%= forum.Topics[i].User.nick %></a>
               </span>
             </p>
           </small>
-        </center>
-      </td>
-      <td class="cell-stat text-center hidden-xs hidden-sm">
-        <center>
-          <small>
-          <p><%= forum.Topics[i].updatedAt %></p>
-          <p>
-          <span class="glyphicon glyphicon-share-alt">
-          <span>XXXX</span>
-          </small>
-          </p>
         </center>
       </td>
       <td class="cell-stat text-center hidden-xs hidden-sm">

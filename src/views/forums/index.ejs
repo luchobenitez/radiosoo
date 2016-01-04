@@ -9,12 +9,12 @@
 	    </tbody>
 	  </table>
 	</div>
-	<div class="welltable">
+	<!--div class="welltable"-->
 	  <table class="table forum table-striped">
 	    <thead>
 	      <tr>
 	        <th class="cell-stat"></th>
-	        <th class="cell"><h3>Foros</h3></th>
+	        <th class="cell"><h3><span class="glyphicon glyphicon-list"></span> Foros</h3></th>
 	        <th class="cell-stat text-center hidden-xs hidden-sm"># Tópicos</th>
 	        <th class="cell-stat text-center hidden-xs hidden-sm"># Comentarios</th>
 	        <th class="cell-stat-2x hidden-xs hidden-sm">Creación</th>
@@ -24,20 +24,23 @@
 				<% var i; for (i=0; i < forums.length; i++) { %>
 					<% if (forums[i].status === 'A') {%>
 			      <tr>
-			        <td class="text-center"><i class="fa fa-comments-o fa-2x text-primary"></i></td>
+			        <td class="text-center"></td>
 			        <td>
 			          <h4>
+                  <span class="glyphicon glyphicon-list"></span>
 									<a href="/forum/<%= forums[i].id %>/topics"><%= forums[i].name %></a><br>
 									<small><%= forums[i].description %></small>
 								</h4>
 			        </td>
 			        <td class="text-center hidden-xs hidden-sm"><a href="#"><%= forums[i].topicCount %></a></td>
 			        <td class="text-center hidden-xs hidden-sm"><a href="#">89 897</a></td>
-			        <td class="hidden-xs hidden-sm"><%= forums[i].createdAt %><small><i class="fa fa-clock-o"></i></small></td>
+			        <td class="hidden-xs hidden-sm">
+                <%= moment(forums[i].createdAt).format(DateFormat) %>
+                <small><i class="fa fa-clock-o"></i></small></td>
 			      </tr>
 					<% } %>
 				<% } %>
 	    </tbody>
 	  </table>
-	</div>
+	<!--/div-->
 </div>

@@ -1,19 +1,63 @@
-<div class="container">
-	<div class="row">
-    <div class="col-md-12">
-      <h4>Foros/topics</h4>
-			<article class="article">
-				<hr class="article-hr">
-					<%= topic.titulo %>
-				</hr>
-				<div class="article-post">
-					<%= topic.texto %>
-				</div>
+<div class="container" style="margin-top: 35px">
+  <div class="page-header page-heading">
+		<table class="table forum table-striped">
+			<tbody>
+	      <tr>
+	        <td><img src="/img/gadsg.gif"></td>
+	        <td><img src="/img/gadsp.gif"></td>
+	      </tr>
+	    </tbody>
+	  </table>
+	</div>
+	<hr class="article-hr">
+	</hr>
+	<div class="article-post">
+	</div>
+
+	  <table class="table forum">
+	    <thead>
+	      <tr>
+	        <th class="cell-stat text-left hidden-xs hidden-sm">
+						<span class="glyphicon glyphicon-comment"></span>
+						<%= topic.titulo %><BR>
+						<small><%= topic.texto %><small>
+					</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+				<% var j = 0 %>
 				<% var i; for (i=0; i < topic.Comments.length; i++) { %>
-						<%= topic.Comments[i].texto %>
+					<tr>
+						<td>
+							<h4>
+								<small>
+									<p class="hidden-xs hidden-sm">
+										<span class="glyphicon glyphicon-comment">
+										<%= topic.Comments[i].texto %>
+									</p>
+								</small>
+							</h4>
+						</td>
+					</tr>
+					<tr>
 						<% include ../partials/commentStatus %>
+					</tr>
+					<tr>
+						<td>
+							<% j++ %>
+							<% if ( mod(j,3)) { %>
+									<table class="table forum table-striped">
+										<tbody>
+											<tr>
+												<td><img src="/img/gadsg.gif"></td>
+												<td><img src="/img/gadsp.gif"></td>
+											</tr>
+										</tbody>
+									</table>
+							<%}%>
+						</td>
+					</tr>
 				<% } %>
-			</article>
-    </div>
-  </div>
+	    </tbody>
+	  </table>
 </div>

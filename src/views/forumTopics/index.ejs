@@ -9,33 +9,49 @@
 	    </tbody>
 	  </table>
 	</div>
-	<!--div class="welltable"-->
-	  <table class="table forum table-striped">
+	  <table class="table forum">
 	    <thead>
 	      <tr>
-	        <th class="cell-stat text-center hidden-xs hidden-sm">Tópicos</th>
+	        <th class="cell-stat text-left hidden-xs hidden-sm"><h3>
+						<span class="glyphicon glyphicon-bookmark"></span>
+						Tópicos</h3></th>
 	      </tr>
 	    </thead>
 	    <tbody>
+				<% var j = 0 %>
 				<% for (var i in forum.Topics) { %>
 					<tr>
-						<td class="text-center"><i class="fa fa-comments-o fa-2x text-primary"></i></td>
 						<td>
 							<h4>
+								<span class="glyphicon glyphicon-bookmark">
 								<a href="/forum/<%= forum.id %>/topics/<%= forum.Topics[i].id %>/comments/details" data-id="titulo">
 									<%= forum.Topics[i].titulo %>
-									<small>
-										<p class="hidden-xs hidden-sm"><%= forum.Topics[i].texto %></p>
-									</small>
 								</a>
+								<small>
+									<p class="hidden-xs hidden-sm"><%= forum.Topics[i].texto %></p>
+								</small>
 							</h4>
 						</td>
 					</tr>
 					<tr>
 						<% include ../partials/articleStatus %>
 					</tr>
+					<tr>
+						<td>
+							<% j++ %>
+							<% if ( mod(j,3)) { %>
+									<table class="table forum table-striped">
+										<tbody>
+											<tr>
+												<td><img src="/img/gadsg.gif"></td>
+												<td><img src="/img/gadsp.gif"></td>
+											</tr>
+										</tbody>
+									</table>
+							<%}%>
+						</td>
+					</tr>
 				<% } %>
 	    </tbody>
 	  </table>
-	<!--/div-->
 </div>
