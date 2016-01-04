@@ -128,3 +128,22 @@ exports.load = function (req, res, next, CommentDBId) {
   }
   ).catch(function (error) { next(error); });
 };
+
+// GET /Comments
+exports.search = function (req, res, next) {
+  console.log (req.body.searchText);
+  models.CommentDB.findAll({
+      where : ['texto like ?', '%' + req.body.searchText + '%'],
+      include: [
+        { model: models.User },
+        {
+          model: models.Topic,
+          include: [models.User]
+        }
+      ]
+    }).then(
+      function (CommentDB) {
+        res.render('comments/search', { title: 'Search Comments', comments: CommentDB, errors: [] });
+      }
+    ).catch(function (error) {next(error);});
+};

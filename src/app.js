@@ -44,16 +44,14 @@ app.locals.keywords     = config.keywords;
 app.locals.ga           = config.ga;
 
 // Helpers for ejs
-var DateFormat = "HH:mm DD-MM-YYYY"; // this is just an example of storing a date format once so you can change it in one place and have it propagate
-app.locals.moment = moment; // this makes moment available as a variable in every EJS page
+var DateFormat = 'HH:mm DD-MM-YYYY';
+app.locals.moment = moment;
 app.locals.DateFormat = DateFormat;
 
-app.locals.mod          = function (x,y){
-  if (x%y === 0)
-    return true;
-  else
-  return false;
-}
+app.locals.mod          = function (x,y) {
+  if (x%y === 0){return true;
+  } else {return false;}
+};
 // Formato de fechas y horas para los templates
 // Se puede utilizar moment en los templates ejs de esta forma:
 // <%= moment(Date.now()).format('DD/MM/YYYY') %>

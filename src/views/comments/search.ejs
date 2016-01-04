@@ -1,0 +1,29 @@
+<div class="container">
+	<div class="row">
+    <div class="col-md-12">
+      <h4>Comentarios</h4>
+      <div class="table-responsive">
+        <table id="forumTable" class="table table-bordred table-striped">
+          <thead>
+            <tr>
+              <th><input type="checkbox" id="checkall" /></th>
+              <th class="cell-stat text-center hidden-sm">Id</th>
+              <th class="cell-stat text-center hidden-sm">Texto</th>
+              <th class="cell-stat text-center hidden-xs hidden-sm">Fecha de Registro</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% var i; for (i=0; i < comments.length; i++) { %>
+              <tr>
+                <td><input type="checkbox" class="checkthis" /></td>
+                <td><a href="#forumEditModal" data-toggle="modal" id="<%= comments[i].id %>" data-target="#forumEditModal" data-id="id"><%= comments[i].id %></a></td>
+                <td><a href="/forum/<%= comments[i].id %>/edit" data-id="name"><%= comments[i].texto %></a></td>
+                <td class="text-center hidden-xs hidden-sm"><%= comments[i].registeredAt %></td>
+              </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

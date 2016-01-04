@@ -143,6 +143,11 @@ router.delete('/topics/:topicId(\\d+)',
 router.get('/topics/:topicId(\\d+)/comments/details',
   topicController.details);     // listar topics y comments
 
+// *** SEARCH COMMENTS
+// router.get('/search/:searchText(\\w+)',
+router.post('/search',
+  commentController.search);     // listar topics
+
 // *** COMMENTS CRUD
 router.get('/topics/:topicId(\\d+)/comment',
   commentController.index);     // listar topics
