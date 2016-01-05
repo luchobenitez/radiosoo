@@ -7,11 +7,11 @@
           <thead>
             <tr>
               <th class="cell-stat text-center hidden-sm">Busqueda: <%= searchText %></th>
-              <th class="cell-stat text-center hidden-xs hidden-sm">Encontrado: <%= comments.length %></th>
+              <th class="cell-stat text-center hidden-xs hidden-sm">Encontrado: <%= comments.rows.length %></th>
             </tr>
           </thead>
 				</table>
-				<% if (comments.length > 0) {  %>
+				<% if (comments.rows.length > 0) {  %>
         <table id="forumTable" class="table table-bordred table-striped">
           <thead>
             <tr>
@@ -21,13 +21,17 @@
           </thead>
           <tbody>
 						<% var j = 0 %>
-            <% var i; for (i=0; i < comments.length; i++) { %>
+            <% var i; for (i=0; i < comments.rows.length; i++) { %>
               <tr>
-                <td><a href="/forum/1/topics/<%= comments[i].Topic.id %>/comments/details" data-id="name">
-									<%= comments[i].Topic.titulo %></a>
-									<p><%= comments[i].texto %></p>
+                <td>
+									<span class="glyphicon glyphicon-bookmark"></span>
+									<a href="/forum/1/topics/<%= comments.rows[i].Topic.id %>/comments/details" data-id="name">
+									<%= comments.rows[i].Topic.titulo %></a>
+									<p><%= comments.rows[i].texto %></p>
 								</td>
-                <td class="text-center hidden-xs hidden-sm"><p></p><p><%= moment(comments[i].createdAt).format(DateFormat) %></p></td>
+                <td class="text-center hidden-xs hidden-sm"><p></p>
+									<p><%= moment(comments.rows[i].createdAt).format(DateFormat) %></p>
+								</td>
               </tr>
 							<% j++ %>
 							<% if ( mod(j,3)) { %>
@@ -48,6 +52,20 @@
           </tbody>
         </table>
 				<% } %>
+				<!--ul class="pagination pagination-lg">
+					<li><a href="#">1</a></li>
+					<li class="active"><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+				</ul-->
+				<ul class="pagination pagination-sm">
+					<li><a href="/search/page/1">1</a></li>
+					<li class="active"><a href="/search/page/2">2</a></li>
+					<li><a href="/search/page/3">3</a></li>
+					<li><a href="/search/page/4">4</a></li>
+					<li><a href="/search/page/5">5</a></li>
+				</ul>
       </div>
     </div>
   </div>

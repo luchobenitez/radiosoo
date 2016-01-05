@@ -47,6 +47,13 @@ config.ga             = process.env.GA   || 'google analytics key';
 
 config.logging        = process.env.LOGGING || false;
 
+/**
+ * pagination Configuration
+ */
+
+config.pagination         = {};
+config.pagination.limit = 10;
+
 // Loggly configuration
 config.loggly         = {};
 config.loggly.token   = process.env.LOGGLY_TOKEN || 'Your Token';

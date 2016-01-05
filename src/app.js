@@ -42,6 +42,7 @@ app.locals.description  = config.description;
 app.locals.author       = config.author;
 app.locals.keywords     = config.keywords;
 app.locals.ga           = config.ga;
+app.locals.paglimit     = config.pagination.limit;
 
 // Helpers for ejs
 var DateFormat = 'HH:mm DD-MM-YYYY';
@@ -249,6 +250,7 @@ app.use(helmet.contentSecurityPolicy({
 // Passport init
 app.use(passport.initialize());
 app.use(passport.session());
+
 
 // Keep user, csrf token and config available
 app.use(function (req, res, next) {

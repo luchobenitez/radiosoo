@@ -14,6 +14,7 @@ var commentController = require('../controllers/comment');
 var sessionController = require('../controllers/session');
 var userController = require('../controllers/user');
 var frontController = require('../controllers/front');
+var paginationHelper = require('../lib/paginationHelper');
 
 // *** PAGES
 // Página de entrada (home page)
@@ -146,7 +147,12 @@ router.get('/topics/:topicId(\\d+)/comments/details',
 // *** SEARCH COMMENTS
 // router.get('/search/:searchText(\\w+)',
 router.post('/search',
+//  paginationHelper.comment,
   commentController.search);     // listar topics
+
+router.post('/search/page/:pageId(\\d+)',
+//  paginationHelper.comment,
+    commentController.searchPage);     // listar topics
 
 // *** COMMENTS CRUD
 router.get('/topics/:topicId(\\d+)/comment',

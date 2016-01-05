@@ -129,9 +129,10 @@ exports.load = function (req, res, next, CommentDBId) {
   ).catch(function (error) { next(error); });
 };
 
-// GET /Comments
+// Post /search
 exports.search = function (req, res, next) {
-  models.CommentDB.findAll({
+
+  models.CommentDB.findAndCountAll({
       where : ['Comment.texto like ?', '%' + req.body.searchText + '%'],
       include: [
         { model: models.User },
@@ -139,9 +140,43 @@ exports.search = function (req, res, next) {
           model: models.Topic, as: 'Topic',
           include: [models.User]
         }
-      ]
-    }).then(
+      ],
+      limit: res.locals.config.paglimit,
+      sort: [['createdAt','desc']]
+    }
+  ).then(
       function (CommentDB) {
+        console.log(CommentDB.count);
+        console.log(CommentDB);
+        res.render('comments/search', {
+          title: 'Search Comments',
+          comments: CommentDB,
+          searchText: req.body.searchText,
+          errors: []
+        });
+      }
+    ).catch(function (error) {next(error);});
+};
+
+// GET /search/page/:pageId
+exports.searchPage = function (req, res, next) {
+
+  models.CommentDB.findAndCountAll({
+      where : ['Comment.texto like ?', '%' + req.body.searchText + '%'],
+      include: [
+        { model: models.User },
+        {
+          model: models.Topic, as: 'Topic',
+          include: [models.User]
+        }
+      ],
+      limit: res.locals.config.paglimit,
+      sort: [['createdAt','desc']]
+    }
+  ).then(
+      function (CommentDB) {
+        console.log(CommentDB.count);
+        console.log(CommentDB);
         res.render('comments/search', {
           title: 'Search Comments',
           comments: CommentDB,
