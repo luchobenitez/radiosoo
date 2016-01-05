@@ -29,21 +29,21 @@
 								</td>
                 <td class="text-center hidden-xs hidden-sm"><p></p><p><%= moment(comments[i].createdAt).format(DateFormat) %></p></td>
               </tr>
+							<% j++ %>
+							<% if ( mod(j,3)) { %>
 							<tr>
 								<td>
-									<% j++ %>
-									<% if ( mod(j,3)) { %>
-											<table class="table forum table-striped">
-												<tbody>
-													<tr>
-														<td><img src="/img/gadsg.gif"></td>
-														<td><img src="/img/gadsp.gif"></td>
-													</tr>
-												</tbody>
-											</table>
-									<%}%>
+									<table class="table forum table-striped">
+										<tbody>
+											<tr>
+												<td><img src="/img/gadsg.gif"></td>
+												<td><img src="/img/gadsp.gif"></td>
+											</tr>
+										</tbody>
+									</table>
 								</td>
 							</tr>
+							<% } %>
             <% } %>
           </tbody>
         </table>

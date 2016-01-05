@@ -283,112 +283,112 @@ sequelize.sync().then(function () {
                 Topic.bulkCreate(
                   [
                     {
-                      titulo: 'Titulo del post 0', texto: 'Este es el texto del post 0',
+                      titulo: 'Titulo del post 1', texto: 'Este es el texto del post 1',
                       avatarid: 0, detailCount: 0, status: 'A', category: 0,
                       pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 1, ForumId: 1
                     },
                     {
-                      titulo: 'Titulo del post 1', texto: 'Este es el texto del post 1',
-                      avatarid: 0,detailCount: 0, status: 'A', category: 0,
-                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 2, ForumId: 1
-                    },
-                    {
                       titulo: 'Titulo del post 2', texto: 'Este es el texto del post 2',
                       avatarid: 0,detailCount: 0, status: 'A', category: 0,
-                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 1, ForumId: 1
+                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 2, ForumId: 1
                     },
                     {
                       titulo: 'Titulo del post 3', texto: 'Este es el texto del post 3',
                       avatarid: 0,detailCount: 0, status: 'A', category: 0,
-                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 2, ForumId: 1
+                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 1, ForumId: 1
                     },
                     {
                       titulo: 'Titulo del post 4', texto: 'Este es el texto del post 4',
                       avatarid: 0,detailCount: 0, status: 'A', category: 0,
-                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 1, ForumId: 1
+                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 2, ForumId: 1
                     },
                     {
                       titulo: 'Titulo del post 5', texto: 'Este es el texto del post 5',
                       avatarid: 0,detailCount: 0, status: 'A', category: 0,
-                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 2, ForumId: 1
+                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 1, ForumId: 1
                     },
                     {
                       titulo: 'Titulo del post 6', texto: 'Este es el texto del post 6',
                       avatarid: 0,detailCount: 0, status: 'A', category: 0,
-                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 1, ForumId: 1
+                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 2, ForumId: 1
                     },
                     {
                       titulo: 'Titulo del post 7', texto: 'Este es el texto del post 7',
                       avatarid: 0,detailCount: 0, status: 'A', category: 0,
-                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 2, ForumId: 1
+                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 1, ForumId: 1
                     },
                     {
                       titulo: 'Titulo del post 8', texto: 'Este es el texto del post 8',
                       avatarid: 0,detailCount: 0, status: 'A', category: 0,
-                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 1, ForumId: 1
+                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 2, ForumId: 1
                     },
                     {
                       titulo: 'Titulo del post 9', texto: 'Este es el texto del post 9',
                       avatarid: 0,detailCount: 0, status: 'A', category: 0,
-                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 2, ForumId: 1
+                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 1, ForumId: 1
                     },
                     {
                       titulo: 'Titulo del post 10', texto: 'Este es el texto del post 10',
                       avatarid: 0,detailCount: 0, status: 'A', category: 0,
-                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 1, ForumId: 1
+                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 2, ForumId: 1
                     },
                     {
                       titulo: 'Titulo del post 11', texto: 'Este es el texto del post 11',
                       avatarid: 0,detailCount: 0, status: 'A', category: 0,
-                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 2, ForumId: 1
+                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 1, ForumId: 1
                     },
                     {
                       titulo: 'Titulo del post 12', texto: 'Este es el texto del post 12',
                       avatarid: 0,detailCount: 0, status: 'A', category: 0,
-                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 1, ForumId: 1
+                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 2, ForumId: 1
                     },
                     {
                       titulo: 'Titulo del post 13', texto: 'Este es el texto del post 13',
                       avatarid: 0,detailCount: 0, status: 'A', category: 0,
-                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 2, ForumId: 1
+                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 1, ForumId: 1
                     },
                     {
                       titulo: 'Titulo del post 14', texto: 'Este es el texto del post 14',
                       avatarid: 0,detailCount: 0, status: 'A', category: 0,
-                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 1, ForumId: 1
+                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 2, ForumId: 1
                     },
                     {
                       titulo: 'Titulo del post 15', texto: 'Este es el texto del post 15',
                       avatarid: 0,detailCount: 0, status: 'A', category: 0,
-                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 2, ForumId: 1
+                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 1, ForumId: 1
                     },
                     {
                       titulo: 'Titulo del post 16', texto: 'Este es el texto del post 16',
                       avatarid: 0,detailCount: 0, status: 'A', category: 0,
-                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 1, ForumId: 1
+                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 2, ForumId: 1
                     },
                     {
                       titulo: 'Titulo del post 17', texto: 'Este es el texto del post 17',
                       avatarid: 0,detailCount: 0, status: 'A', category: 0,
-                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 2, ForumId: 1
+                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 1, ForumId: 1
                     },
                     {
                       titulo: 'Titulo del post 18', texto: 'Este es el texto del post 18',
                       avatarid: 0,detailCount: 0, status: 'A', category: 0,
-                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 1, ForumId: 1
+                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 2, ForumId: 1
                     },
                     {
                       titulo: 'Titulo del post 19', texto: 'Este es el texto del post 19',
                       avatarid: 0,detailCount: 0, status: 'A', category: 0,
-                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 2, ForumId: 2
+                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 1, ForumId: 1
                     },
                     {
                       titulo: 'Titulo del post 20', texto: 'Este es el texto del post 20',
                       avatarid: 0,detailCount: 0, status: 'A', category: 0,
-                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 1, ForumId: 2
+                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 2, ForumId: 2
                     },
                     {
                       titulo: 'Titulo del post 21', texto: 'Este es el texto del post 21',
+                      avatarid: 0,detailCount: 0, status: 'A', category: 0,
+                      pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 1, ForumId: 2
+                    },
+                    {
+                      titulo: 'Titulo del post 22', texto: 'Este es el texto del post 22',
                       avatarid: 0,detailCount: 0, status: 'A', category: 0,
                       pregunta: 'Capital de Italia', respuesta: 'Roma', UserId: 2, ForumId: 2
                     }
