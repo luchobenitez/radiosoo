@@ -1,7 +1,7 @@
 'use strict';
 
 var models = require('../models/models.js');
-
+var SqlString = require('../../node_modules/sequelize/lib/sql-string.js');
 // FORUMS CRUD
 
 // GET /Comments
@@ -131,7 +131,6 @@ exports.load = function (req, res, next, CommentDBId) {
 
 // GET /Comments
 exports.search = function (req, res, next) {
-  console.log (req.body.searchText);
   models.CommentDB.findAll({
       where : ['Comment.texto like ?', '%' + req.body.searchText + '%'],
       include: [
@@ -143,8 +142,12 @@ exports.search = function (req, res, next) {
       ]
     }).then(
       function (CommentDB) {
-        console.log(CommentDB);
-        res.render('comments/search', { title: 'Search Comments', comments: CommentDB, errors: [] });
+        res.render('comments/search', {
+          title: 'Search Comments',
+          comments: CommentDB,
+          searchText: req.body.searchText,
+          errors: []
+        });
       }
     ).catch(function (error) {next(error);});
 };
