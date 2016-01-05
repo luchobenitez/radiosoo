@@ -133,16 +133,17 @@ exports.load = function (req, res, next, CommentDBId) {
 exports.search = function (req, res, next) {
   console.log (req.body.searchText);
   models.CommentDB.findAll({
-      where : ['texto like ?', '%' + req.body.searchText + '%'],
+      where : ['Comment.texto like ?', '%' + req.body.searchText + '%'],
       include: [
         { model: models.User },
         {
-          model: models.Topic,
+          model: models.Topic, as: 'Topic',
           include: [models.User]
         }
       ]
     }).then(
       function (CommentDB) {
+        console.log(CommentDB);
         res.render('comments/search', { title: 'Search Comments', comments: CommentDB, errors: [] });
       }
     ).catch(function (error) {next(error);});
