@@ -129,8 +129,18 @@ exports.load = function (req, res, next, CommentDBId) {
   ).catch(function (error) { next(error); });
 };
 
+// Autoload :id de comentarios
+exports.loadPageId = function (req, res, next, pageId) {
+  req.pageId = pageId;
+  next();
+};
+
+
 // Post /search
 exports.search = function (req, res, next) {
+  res.locals.page = 1;
+  res.locals.num = 1;
+  res.locals.pages= 0; // not known yet
 
   models.CommentDB.findAndCountAll({
       where : ['Comment.texto like ?', '%' + req.body.searchText + '%'],
@@ -141,13 +151,12 @@ exports.search = function (req, res, next) {
           include: [models.User]
         }
       ],
-      limit: res.locals.config.paglimit,
+      limit: res.locals.config.pagination.limit,
       sort: [['createdAt','desc']]
     }
   ).then(
       function (CommentDB) {
-        console.log(CommentDB.count);
-        console.log(CommentDB);
+        res.locals.pages = Math.ceil(CommentDB.count/res.locals.config.pagination.limit);
         res.render('comments/search', {
           title: 'Search Comments',
           comments: CommentDB,
@@ -159,8 +168,12 @@ exports.search = function (req, res, next) {
 };
 
 // GET /search/page/:pageId
-exports.searchPage = function (req, res, next) {
-
+exports.searchPage = function (req, res, next, pageId) {
+  console.log('searchPage');
+  res.locals.page = pageId || 1;
+  res.locals.num = res.locals.page * res.locals.config.limit;
+  console.log('pageId ' + pageId);
+  console.log('num ' + res.locals.num);
   models.CommentDB.findAndCountAll({
       where : ['Comment.texto like ?', '%' + req.body.searchText + '%'],
       include: [
@@ -170,14 +183,20 @@ exports.searchPage = function (req, res, next) {
           include: [models.User]
         }
       ],
-      limit: res.locals.config.paglimit,
+      offset: res.locals.num,
+      limit: res.locals.config.pagination.limit,
       sort: [['createdAt','desc']]
     }
   ).then(
       function (CommentDB) {
+        res.locals.pages = Math.ceil(CommentDB.count/res.locals.config.pagination.limit);
         console.log(CommentDB.count);
-        console.log(CommentDB);
-        res.render('comments/search', {
+        console.log(res.locals.pages);
+        console.log(res.locals.page);
+        console.log(res.locals.config.pagination.limit);
+        console.log(Math.ceil(CommentDB.count/res.locals.config.pagination.limit));
+        console.log(res.params);
+        res.render('comments/searchPage', {
           title: 'Search Comments',
           comments: CommentDB,
           searchText: req.body.searchText,

@@ -126,14 +126,6 @@ app.post('/csp', bodyParser.json(), function (req, res) {
   res.status(204).end();
 });
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
-
-// Compress response data with gzip / deflate.
-// This middleware should be placed "high" within
-// the stack to ensure all responses are compressed.
-app.use(compress());
 
 // http://en.wikipedia.org/wiki/HTTP_ETag
 // Google has a nice article about "strong" and "weak" caching.
@@ -150,6 +142,15 @@ var day  = (hour * 24);   //  86400000
 var week = (day * 7);     // 604800000
 
 app.use(express.static(__dirname + '/public', { maxAge: week }));
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+// Compress response data with gzip / deflate.
+// This middleware should be placed "high" within
+// the stack to ensure all responses are compressed.
+app.use(compress());
 
 // Body parsing middleware supporting
 // JSON, urlencoded, and multipart requests.

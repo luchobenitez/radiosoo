@@ -14,7 +14,6 @@ var commentController = require('../controllers/comment');
 var sessionController = require('../controllers/session');
 var userController = require('../controllers/user');
 var frontController = require('../controllers/front');
-var paginationHelper = require('../lib/paginationHelper');
 
 // *** PAGES
 // Página de entrada (home page)
@@ -40,6 +39,7 @@ router.param('topicId',     topicController.load);     // autoload :topicId
 router.param('commentId',   commentController.load);  // autoload :commentId
 router.param('userId',      userController.load);     // autoload :userId
 router.param('sessionId',   sessionController.load);  // autoload :sessionId
+router.param('pageId',      commentController.loadPageId);  //  :pageId
 
 // *** SESSION
 // Definición de rutas de sesion
@@ -145,14 +145,11 @@ router.get('/topics/:topicId(\\d+)/comments/details',
   topicController.details);     // listar topics y comments
 
 // *** SEARCH COMMENTS
-// router.get('/search/:searchText(\\w+)',
 router.post('/search',
-//  paginationHelper.comment,
-  commentController.search);     // listar topics
+  commentController.search);
 
-router.post('/search/page/:pageId(\\d+)',
-//  paginationHelper.comment,
-    commentController.searchPage);     // listar topics
+router.get('/search/:pageId(\\d+)',
+  commentController.searchPage);
 
 // *** COMMENTS CRUD
 router.get('/topics/:topicId(\\d+)/comment',
